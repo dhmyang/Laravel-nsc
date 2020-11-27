@@ -17,4 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/over-ons', 'MenuController@menu');
 Route::get('/menu', 'MenuController@menu');
+Route::get('/contact', 'ContactController@contact');
