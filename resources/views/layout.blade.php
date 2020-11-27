@@ -12,7 +12,7 @@
     </head>
     
     <body>
-        @yield(navbar)
+        @yield("navbar")
         @yield("content")
 
     </body>
