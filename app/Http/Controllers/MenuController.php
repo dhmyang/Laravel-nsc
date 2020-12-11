@@ -9,4 +9,8 @@ class MenuController extends Controller
     public function menu(){
         return view ('menu');
     }
+
+    public function item($id = 0){
+        return view ('menu', ['id'=>$id]);
+    }
 }

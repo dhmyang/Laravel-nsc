@@ -17,6 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/over-ons', 'MenuController@menu');
+
 Route::get('/menu', 'MenuController@menu');
+Route::get('/menu/{id?}', 'MenuController@item')->where('id', '[0-9]+');
+
+Route::prefix('admin')->group(function(){
+    Route::get('settings',function() { return 'users'; });
+    Route::get('History', function(){return'users';});
+});
+
+
+Route::get('/overons', 'OveronsController@overons');
 Route::get('/contact', 'ContactController@contact');
