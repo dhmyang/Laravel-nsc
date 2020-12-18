@@ -12,7 +12,13 @@
     </head>
     
     <body>
-        @yield("navbar")
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            @section('navbar')
+            Navigation bar here
+            @show
+        </nav>
+
+
         @yield("content")
 
     </body>
