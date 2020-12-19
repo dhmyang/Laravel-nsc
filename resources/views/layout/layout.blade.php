@@ -31,7 +31,7 @@
                                 <a class="nav-link" href="/about">About</a>
                             </li> --}}
                             <li class="nav-item">
-                                <a class="nav-link" href="/create">review</a>
+                                <a class="nav-link" href="/review/create">review</a>
                             </li>
                         </ul>
                     </div>

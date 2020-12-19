@@ -1,8 +1,9 @@
 @extends("layout.layout")
 
+@section ("titel")
+New Shanghai Corner Restaurant
+@endsection
+
 @section ("content")
-
-<h1>New Shanghai Corner Restaurant</h1>
 <p>Bap opdracht</p>
-
 @endsection
