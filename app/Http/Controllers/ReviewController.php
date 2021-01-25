@@ -3,9 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\support\facades\DB;
+use App\Review;
 
 class ReviewController extends Controller
 {
+    public function list (){
+        $reviews = Review::all();
+        return view('review.review', ['allreviews' => $reviews]);
+    }
+
+    public function details($id){
+        // $company = DB::table('companies')->where ('id', '=', $id)->first();
+        $review = Review::find($id); // Dit is afkorting voor regel hierboven
+        return view('review.reviewdetail', ['review' =>$review]);
+
+    }
+
+    
     /**
      * Display a listing of the resource.
      *
@@ -34,14 +49,27 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
-        $request->validate (
+        $reviewInfo = $request->validate (
             [
                 'name' => 'required|min:1',
                 'email' => 'required|unique:posts|min:1',
-                'message' => 'required|min:1',
+                'star' => 'required',
+                'message' => 'required|min:1'
             ]
             );
+            dd($reviewInfo);
+            // $review = new Review();
+            // $review->name = $reviewInfo['name'];
+            // $review->email = $reviewInfo['email'];
+            // $review->message = $reviewInfo['message'];
+            // $review->star = $reviewInfo['star'];
+            // $review->save();
+
+            // $newReview = Review::create($reviewInfo);
+
+            // $newReview->save();
+
+            return;
     }
 
     /**

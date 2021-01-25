@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    public function showArtikel(){
-    return view ('showartikel');
+    public function showartikel($id){
+    return view ('showartikel', ['id' => $id]);
     }
+
+    // public function showcategory($category){
+    // return view ('showartikel', ['category' => $category]);
+    // }
 }
