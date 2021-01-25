@@ -39,9 +39,11 @@
         <br>
         <br>
         <h1>
+            <div class="d-flex justify-content-center pt-4">
             @section('titel')
             Titel
             @show
+            </div>
         </h1>
         <main>
             @yield("content")

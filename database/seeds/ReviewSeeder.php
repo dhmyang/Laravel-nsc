@@ -12,12 +12,14 @@ class ReviewSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i <200; $i++){
+        $faker = Faker\Factory::create();
+
+        for ($i = 1; $i <50; $i++){
             $review = new Review();
-            $review->name = 'Review' . $i;
-            $review->email = 'testmail' . $i .'@mail.nl';
-            $review->star = 5;
-            $review->message = 'Lekker gegeten';
+            $review->name = $faker->name();
+            $review->email = $faker->email();
+            $review->star = $faker->numberBetween(1, 5);
+            $review->message = $faker->text(150);
             $review->save();
         }
     }

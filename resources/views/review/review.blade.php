@@ -14,9 +14,10 @@ All Reviews from previous guest
         <td>{{$reviews->star}}/5<i class="fas fa-star"></i><br></td>
         <td>{{$reviews->message}}<br></td>
     </tr>
-    
-        
     @endforeach
     </table>
+</div>
+<div class="d-flex justify-content-center">
+{{$allreviews->links()}}
 </div>
 @endsection

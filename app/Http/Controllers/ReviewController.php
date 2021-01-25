@@ -9,7 +9,7 @@ use App\Review;
 class ReviewController extends Controller
 {
     public function list (){
-        $reviews = Review::all();
+        $reviews = Review::paginate(20);
         return view('review.review', ['allreviews' => $reviews]);
     }
 
@@ -28,7 +28,10 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $reviews = Review::all();
+        // $reviews = Review::paginate(20);
+        
+        return view('review.add', ['reviews' => $reviews]);
     }
 
     /**
