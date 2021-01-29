@@ -55,12 +55,12 @@ class ReviewController extends Controller
         $reviewInfo = $request->validate (
             [
                 'name' => 'required|min:1',
-                'email' => 'required|unique:posts|min:1',
+                'email' => 'required|unique:reviews|min:1',
                 'star' => 'required',
                 'message' => 'required|min:1'
             ]
             );
-            dd($reviewInfo);
+            // dd($reviewInfo);
             // $review = new Review();
             // $review->name = $reviewInfo['name'];
             // $review->email = $reviewInfo['email'];
@@ -68,11 +68,11 @@ class ReviewController extends Controller
             // $review->star = $reviewInfo['star'];
             // $review->save();
 
-            // $newReview = Review::create($reviewInfo);
+            $newReview = Review::create($reviewInfo);
 
-            // $newReview->save();
+            $newReview->save();
 
-            return;
+            return redirect()->route('review.details', ['id'=>$newReview->id]);
     }
 
     /**
